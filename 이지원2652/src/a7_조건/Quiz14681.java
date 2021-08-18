@@ -20,7 +20,7 @@ public class Quiz14681 {
 			System.out.println("3사분면");			
 		}  else if (x > 0 && y < 0) {
 			System.out.println("4사분면");			
-		}else {
+		} else {
 			System.out.println("두 값이 0");			
 		}			
 	}
