@@ -9,7 +9,7 @@ public class StarEx1 {
 		Scanner input = new Scanner(System.in);
 		int star = input.nextInt();
 		
-		/*
+		
 		for(int i = 0; i < star; i++) {
 			for(int j = star; j >= 0; j--)	{
 				if (i < j) {					
@@ -18,7 +18,7 @@ public class StarEx1 {
 				}
 			}	System.out.println();		
 		}
-		*/
+		
 		
 		for(int i = 0; i < star; i++) {
 			for(int j = 0; j < i + 1; j++)	{
