@@ -1,4 +1,4 @@
-package a8_¹Ýº¹;
+package a8_ë°˜ë³µ;
 
 public class ForEx {
 
@@ -19,11 +19,11 @@ public class ForEx {
 	
 	/*
 	for(;true;) {
-		System.out.println("for¹®");		
+		System.out.println("forë¬¸");		
 	}
 	
 	 while(true) {
-	 	System.out.println("while¹®");		 
+	 	System.out.println("whileë¬¸");		 
 	}
 	*/
 

@@ -1,4 +1,4 @@
-package a8_¹Ýº¹;
+package a8_ë°˜ë³µ;
 
 public class StarEx2 {
 
