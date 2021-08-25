@@ -17,7 +17,7 @@ public class Gugudan {
 		}
 		*/
 		
-		System.out.println(num + "��");
+		System.out.println(num + "단");
 		for(int i = 0; i < 9 ; i++ ) {
 			int i2 = i + 1;				
 			System.out.println(num + " x " + i2 + " = " + num * i2);
