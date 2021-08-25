@@ -1,4 +1,4 @@
-package a8_ë°˜ë³µ;
+package a8_¹Ýº¹;
 
 public class WhileEx {
 
@@ -8,7 +8,7 @@ public class WhileEx {
 		while(num <= 100) {
 //			System.out.println(num);
 			result += num;
-			num++;		//ï¿½Ýºï¿½ ï¿½ï¿½ ï¿½Û¾ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+			num++;		//¹Ýº¹ ÈÄ ÀÛ¾÷ (¸¶Áö¸·¿¡ ¾²±â)
 		}
 		System.out.println(result);
 
