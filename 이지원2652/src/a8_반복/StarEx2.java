@@ -45,16 +45,13 @@ public class StarEx2 {
 		
 		for(int i = 0; i < 5; i++) {	
 			for(int j = 4; j > i; j--)	{				
-				System.out.print(" ");	
-				//System.out.print("j");
+				System.out.print(" ");					
 			}
 			for(int k = 0; k < i; k++)	{				
-				System.out.print("*");	
-				//System.out.print("k");
+				System.out.print("*");				
 			}
 			for(int l = 0; l < i + 1; l++)	{				
-				System.out.print("*");
-				//System.out.print("l");
+				System.out.print("*");				
 			}
 			System.out.println();			
 		}	
