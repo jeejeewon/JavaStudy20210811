@@ -22,8 +22,8 @@ public class Quiz {
 	}
 	
 	void quiz3(int count3){
-		for(int i = 0; i < 5; i++) {
-			for(int j = 0; j < 5-i-1; j++) {
+		for(int i = 0; i < count3; i++) {
+			for(int j = 0; j < count3-i-1; j++) {
 				System.out.print(" ");
 			}
 			for(int j = 0; j < i + 1; j++) {
@@ -34,11 +34,11 @@ public class Quiz {
 	}
 	
 	void quiz4(int count4){
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < count4; i++) {
 			for(int j = 0; j < i; j++) {
 				System.out.print(" ");
 			}
-			for(int j = 0; j < 5-i; j++) {
+			for(int j = 0; j < count4-i; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
@@ -46,8 +46,8 @@ public class Quiz {
 	}
 	
 	void quiz5(int count5){
-		for(int i = 0; i < 5; i++) {	
-			for(int j = 0; j < 5 - i + 1; j++)	{				
+		for(int i = 0; i < count5; i++) {	
+			for(int j = 0; j < count5 - i + 1; j++)	{				
 				System.out.print(" ");					
 			}
 			for(int j = 0; j < (i*2)+1; j++)	{				
@@ -116,7 +116,7 @@ public class Quiz {
 		boolean mainFlag = true;				
 		
 		while(mainFlag) {
-			System.out.println("[프로그램 메뉴]");
+			System.out.println("[별찍기 프로그램]");
 			System.out.println("1. 문제1");
 			System.out.println("2. 문제2");
 			System.out.println("3. 문제3");
