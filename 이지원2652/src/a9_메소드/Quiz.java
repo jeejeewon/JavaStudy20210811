@@ -106,14 +106,13 @@ public class Quiz {
 		 * 
 		 * 메소드 5개 만들기
 		 * 
-		 */
-		// 첫번째 입력:	 
+		 */		
 
 		Quiz q = new Quiz();
 		
 		Scanner in = new Scanner(System.in);		
 		
-		boolean mainFlag = true;				
+		boolean mainFlag = true;			
 		
 		while(mainFlag) {
 			System.out.println("[별찍기 프로그램]");
@@ -124,7 +123,7 @@ public class Quiz {
 			System.out.println("5. 문제5");
 			System.out.println("q. 프로그램 종료");
 			System.out.print("명령을 입력하세요: ");
-			String selector = in.nextLine();			
+			String selector = in.next();			
 			
 			if(selector.equals("1") || selector.equals("2") || selector.equals("3") || selector.equals("4") || selector.equals("5")) {
 				System.out.print("출력할 별의 개수를 입력하세요: ");
@@ -138,8 +137,7 @@ public class Quiz {
 				break;
 			}else {
 				System.out.println("잘못된 입력입니다.");					
-			}			
-			
+			}	
 		} 		
 		System.out.println("프로그램 종료!");	
 	}	
