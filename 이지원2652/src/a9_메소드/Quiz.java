@@ -130,16 +130,14 @@ public class Quiz {
 				System.out.print("출력할 별의 개수를 입력하세요: ");
 				int count = in.nextInt();				
 				q.procStart(selector, count);
-				System.out.println();
-				break;
+				System.out.println();				
 								 								
 			}else if(selector.equals("q")) {
 				System.out.println("프로그램 종료중...");
 				mainFlag = false;
 				break;
 			}else {
-				System.out.println("잘못된 입력입니다.");	
-				break;
+				System.out.println("잘못된 입력입니다.");					
 			}			
 			
 		} 		
