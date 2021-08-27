@@ -72,13 +72,10 @@ public class Quiz {
 		}else if(selector.equals("4")) {
 			quiz4(count);	
 			
-		}else if(selector.equals("5")) {
+		}else {
 			quiz5(count);	
 			
-		}else {
-			System.out.println("잘못된 입력입니다.");
-			
-		}	
+		}
 	}		
 	
 	public static void main(String[] args) {
