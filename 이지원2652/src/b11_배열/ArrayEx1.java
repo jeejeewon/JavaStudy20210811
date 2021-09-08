@@ -19,12 +19,16 @@ public class ArrayEx1 {
 			 num[i] = i*10;
 		 }
 		 for(int i =0; i < 100; i++) {
-				System.out.println(num[i]);
+				//System.out.println(num[i]);
 			}
+		 
+		 System.out.println(num.length);
 		
 		//2.
 		int[] arr_i = new int[] {10,20,30,40,50}; // 공간의 제약
-		int[] arr_i2 = {10,20,30,40,50};			
+		int[] arr_i2 = {10,20,30,40,50};	
+		
+		
 		
 	}
 	
