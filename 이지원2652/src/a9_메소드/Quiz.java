@@ -42,7 +42,6 @@ public class Quiz {
 			for(int j = 0; j < count4-i; j++) {
 				System.out.print("*");
 			}
-			System.out.println();
 		}
 	}
 	

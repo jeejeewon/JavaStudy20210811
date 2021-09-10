@@ -5,25 +5,20 @@ import b12_상속.Animal;
 public class OXcount {
 
 	public static void main(String[] args) {
-		String[][][] quiz = new String[3][2][3];
-		
-		int count_0 = 0;
-		int count_x = 0;
-		
-		//System.out.println(quiz.length);
-		
+				
 		int[][][] arr  = {{{1,2,3},{1,2,3}},{{1,2,3},{1,2,3}},{{1,2,3},{1,2,3}}};
 		//System.out.println(arr[0][0][0]);
 		//System.out.println(arr[0][0][1]);
 		//System.out.println(arr[0][0][2]);
 		
-		System.out.println(arr.length);
-		System.out.println(arr[0].length);
-		System.out.println(arr[0][1].length);
+		System.out.println(arr.length); // {{{1,2,3},{1,2,3}},{{1,2,3},{1,2,3}},{{1,2,3},{1,2,3}}}
+		System.out.println(arr[0].length); // 인덱스 0번의  배열의 길이 {{1,2,3},{1,2,3}}
+		System.out.println(arr[0][1].length); // 인덱스 1번의  배열의 길이 {1,2,3} 
 		
-		int[] a = new int[3];
-		//System.out.println(a.length);
+		String[][][] quiz = new String[3][2][3];
 		
+		int count_0 = 0;
+		int count_x = 0;	
 		
 		for (int i = 0; i < quiz.length; i++) {
 			for (int j = 0; j < quiz[i].length; j++) {
@@ -32,10 +27,6 @@ public class OXcount {
 				}
 			}
 		}
-		
-		// OXO, OOO
-		// OOX, OOO	
-		// OXO, OOX
 	
 		for (int i = 0; i < quiz.length; i++) {
 			for (int j = 0; j < quiz[i].length; j++) {
@@ -44,9 +35,7 @@ public class OXcount {
 				}
 				System.out.print(quiz[i].length-1 == j ? "\n" : ", ");
 			}
-		}
-	
-			
+		}			
 	}
 
 }
