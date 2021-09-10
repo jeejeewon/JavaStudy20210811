@@ -15,8 +15,9 @@ public class Animals {
 		a[1] = new Tiger();
 		a[2] = new Eagle();
 		
-		//forEach문 (인덱스가 정해져있어야함)
-		for(Animal ani : a) { //ani는 클래스 변수
+		// 업캐스팅
+		// forEach문 (인덱스가 정해져있어야함)
+		for(Animal ani : a) { // ani는 클래스 변수
 			 ani.move();			
 		}		
 	}
@@ -28,7 +29,7 @@ public class Animals {
 class Human extends Animal {
 	@Override
 	public void move() {
-		super.move(); // 부모 메소드 호출
+		// super.move(); // 부모 메소드 호출,  같은 메소드를 가짐
 		//System.out.println("사람이 네발로 걷습니다.");
 	}		
 }
@@ -37,7 +38,7 @@ class Tiger extends Animal {
 	@Override
 	public void move() {
 		//super.move(); 상속받은 기능을 재정의
-		System.out.println("호랑이가 네발로 걷습니다.");		
+		System.out.println("호랑이가 뜁니다.");		
 	}	
 }
 
