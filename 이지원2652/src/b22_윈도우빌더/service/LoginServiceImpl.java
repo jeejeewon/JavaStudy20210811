@@ -2,6 +2,7 @@ package b22_윈도우빌더.service;
 
 import b22_윈도우빌더.dao.LoginDao;
 import b22_윈도우빌더.dao.LoginDaoImpl;
+import b22_윈도우빌더.dto.UserDto;
 
 /*
  * MVC Model
@@ -34,6 +35,11 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public int loginLogic(String id, String pwd) {
 		return loginDao.login(id, pwd);
+	}
+	
+	@Override
+	public UserDto getUserDto(String id) {
+		return loginDao.getUserDto(id);
 	}
 
 }

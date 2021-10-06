@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLSyntaxErrorException;
 
+import b22_윈도우빌더.dto.UserDto;
 import db.DBConnectionMgr;
 
 public class LoginDaoImpl implements LoginDao {	
@@ -77,6 +78,41 @@ public class LoginDaoImpl implements LoginDao {
 		}
 		
 		return name;
+		
+	}
+	@Override
+		public UserDto getUserDto(String id) {
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = null;
+			String name = null;
+			
+			try {
+				con = pool.getConnection();
+				sql = "select * from user_mst where user_id = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				rs.next();
+				UserDto userDto = new UserDto();
+				userDto.setUser_id(rs.getString(1));
+				userDto.setUser_pwd(rs.getString(2));
+				userDto.setUser_name(rs.getString(3));
+				userDto.setUser_phone(rs.getString(4));
+				userDto.setUser_email(rs.getString(5));
+				userDto.setUser_gender(rs.getInt(6));
+				
+				return userDto;				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt, rs);
+			}
+			
+			return null;		
 		
 	}
 
