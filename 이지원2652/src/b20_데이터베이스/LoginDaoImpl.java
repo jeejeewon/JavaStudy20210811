@@ -59,8 +59,7 @@ public class LoginDaoImpl implements LoginDao {
 			sql = "select user_name from user_mst where user_id = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			
+			rs = pstmt.executeQuery();			
 			rs.next();
 			name = rs.getString(1);
 			
