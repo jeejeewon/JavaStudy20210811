@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 
 import b22_윈도우빌더.dao.DeleteUSerDao;
 import b22_윈도우빌더.dao.DeleteUserDaoImpl;
+import b22_윈도우빌더.dao.UpdateUserDao;
+import b22_윈도우빌더.dao.UpdateUserDaoImpl;
 import b22_윈도우빌더.dto.UserDto;
 import b22_윈도우빌더.service.LoginService;
 import b22_윈도우빌더.service.LoginServiceImpl;
@@ -27,6 +29,7 @@ import java.awt.CardLayout;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class User extends JFrame {
 	
@@ -45,11 +48,15 @@ public class User extends JFrame {
 	private JComboBox gender_cb;
 	private JLabel welcomMsg;
 	private String[] gender_list = {"선택","남성","여성","선택하지 않음"};	
+	private JPasswordField new_pwd_tf;
+	private JPasswordField new_repwd_tf;
 	
 	
 	private LoginService loginService;
 	private SignUpService signUpService;
 	private DeleteUSerDao deleteUserDao;
+	private UpdateUserDao updateUserDao;
+	
 	
 
 	/**
@@ -75,6 +82,7 @@ public class User extends JFrame {
 		loginService = new LoginServiceImpl();
 		signUpService = new SignUpServiceImpl();
 		deleteUserDao = new DeleteUserDaoImpl(); 
+		updateUserDao = new UpdateUserDaoImpl();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 882, 672);
@@ -350,10 +358,83 @@ public class User extends JFrame {
 					login_id_tf.setText("");
 					login_pwd_tf.setText("");	
 				}
-				
+				 
 			}
 		});
 		user_drop_btn.setBounds(747, 590, 97, 23);
 		mypage_pan.add(user_drop_btn);
+		
+		JLabel lblNewLabel_3 = new JLabel("마이페이지");
+		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.BOLD, 17));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(368, 49, 97, 15);
+		mypage_pan.add(lblNewLabel_3);		
+		
+		JLabel lblNewLabel_4 = new JLabel("새 비밀번호");
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_4.setBounds(568, 164, 97, 15);
+		mypage_pan.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_4_1 = new JLabel("새 비밀번호 확인");
+		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_4_1.setBounds(568, 191, 97, 15);
+		mypage_pan.add(lblNewLabel_4_1);
+		
+		new_pwd_tf = new JPasswordField();
+		new_pwd_tf.setBounds(677, 161, 113, 21);
+		new_pwd_tf.setEditable(false);
+		mypage_pan.add(new_pwd_tf);
+		
+		new_repwd_tf = new JPasswordField();
+		new_repwd_tf.setBounds(677, 188, 113, 21);
+		new_repwd_tf.setEditable(false);
+		mypage_pan.add(new_repwd_tf);
+		
+		JButton update_btn = new JButton("수정 완료");
+		update_btn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(new_pwd_tf.getText().equals(new_repwd_tf.getText())) {
+					boolean flag = updateUserDao.updatePassword(loginSession.getUser_id(),new_pwd_tf.getText());
+					if (flag == true) {
+						loginSession.setUser_pwd(new_pwd_tf.getText());
+						JOptionPane.showMessageDialog(null,"비밀번호 변경 완료","완료", JOptionPane.INFORMATION_MESSAGE);
+						new_pwd_tf.setText("");
+						new_repwd_tf.setText("");
+						new_pwd_tf.setEditable(false);
+						new_repwd_tf.setEditable(false);
+						update_btn.setEnabled(false);
+					}	
+				} else {
+					JOptionPane.showMessageDialog(null,"비밀번호가 일치하지 않습니다.","비밀번호 확인", JOptionPane.WARNING_MESSAGE);
+				}
+			}
+		});
+		update_btn.setBounds(693, 219, 97, 23);
+		update_btn.setEnabled(false);
+		mypage_pan.add(update_btn);
+		
+		JButton update_pwd_btn = new JButton("비밀번호 수정");
+		update_pwd_btn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				while(true) {
+					String  originPwd = JOptionPane.showInputDialog(null, "기존의 비밀번호를 입력해주세오.","비밀번호 수정", JOptionPane.YES_NO_OPTION);
+					if(loginSession.getUser_pwd().equals(originPwd)) {
+						new_pwd_tf.setEditable(true);
+						new_repwd_tf.setEditable(true);
+						update_btn.setEnabled(true);											
+						break;
+					} else if(originPwd == null) {
+						break;
+					} else {
+						JOptionPane.showMessageDialog(null, "비밀번호가 일치하지 않습니다.", "비밀번호 오류", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+				
+			}
+		});
+		update_pwd_btn.setBounds(601, 590, 134, 23);
+		mypage_pan.add(update_pwd_btn);
 	}
 }

@@ -24,7 +24,7 @@ public class LoginServiceImpl implements LoginService {
 		int flag = 0;
 		if(id.length() == 0) {
 			flag = 3;			
-		} else if (pwd.length() == 1) {
+		} else if (pwd.length() == 0) {
 			flag = 4;
 		} else {
 			flag = loginLogic(id, pwd);

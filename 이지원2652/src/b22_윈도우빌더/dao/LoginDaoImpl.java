@@ -31,6 +31,7 @@ public class LoginDaoImpl implements LoginDao {
 					+ "user_mst um "
 					+ "left outer join user_mst ud on (ud.user_id = um.user_id and ud.user_password = ?)"
 					+ "where um.user_id = ?";
+			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, password);
 			pstmt.setString(2, id);
 			try {
