@@ -1,15 +1,15 @@
-package a8_반복;
+package a8_諛섎났;
 
 public class IfLoop {
 
 	public static void main(String[] args) {
 		
 		if(0 < 1) {
-			System.out.println("참입니다.");
+			System.out.println("");
 		}
 		
 		while(true) {
-			System.out.println("참입니다.");
+			System.out.println("");
 		}
 	}
 

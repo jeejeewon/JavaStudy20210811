@@ -1,4 +1,4 @@
-package a8_¹Ýº¹;
+package a8_ë°˜ë³µ;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class GugudanAll {
 		for(int i = 0; i < 8; i++) {
 			int i2 = i + 2;
 			
-			System.out.println(i2 + "´Ü");			
+			System.out.println(i2 + "ë‹¨");			
 			
 			for(int j = 0; j < 9; j++) {
 				int j2 = j + 1;
@@ -24,10 +24,10 @@ public class GugudanAll {
 		int start = input.nextInt();
 		int end = input.nextInt();
 		
-		for(int i = 0; i < 8; i++) { // i¿¡ start ´ëÀÔÇØµµµÊ
+		for(int i = 0; i < 8; i++) { 
 			int i2 = i + 2;
 			if (i2 >= start && i2 <= end) {
-				System.out.println(i2 + "´Ü");					
+				System.out.println(i2 + "ë‹¨");					
 				for(int j = 0; j < 9; j++) {
 					int j2 = j + 1;
 					System.out.println(i2 + "x" + j2 + "=" + i2 * j2);

@@ -1,4 +1,4 @@
-package a8_¹Ýº¹;
+package a8_ë°˜ë³µ;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class Gugudan {
 		}
 		*/
 		
-		System.out.println(num + "´Ü");
+		System.out.println(num + "ë‹¨");
 		for(int i = 0; i < 9 ; i++ ) {
 			int i2 = i + 1;				
 			System.out.println(num + " x " + i2 + " = " + num * i2);
